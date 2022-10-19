@@ -1,5 +1,6 @@
 # Import necessary classes
 from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Category, Product, Client, Order
 from django.shortcuts import get_object_or_404
 
