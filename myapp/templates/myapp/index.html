@@ -5,7 +5,7 @@
     <h2>List of Categories</h2>
     <ol>
     {% for cat in cat_list %}
-    <li> {{ cat.name}} </li>
+        <li> <a href="{{ cat.id }}">{{ cat.name}}</a> </li>
     {% endfor %}
     </ol>
     {% else %}
