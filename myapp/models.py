@@ -21,9 +21,15 @@ class Product(models.Model):
     stock = models.PositiveIntegerField(default=100)
     available = models.BooleanField(default=True)
     description = models.TextField(blank=True, null=True)
+    interested = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.name
+
+    def refill(self):
+        self.stock = self.stock + 100
+        return self.stock
+
 
 
 class Client(User):

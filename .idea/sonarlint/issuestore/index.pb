@@ -7,7 +7,17 @@ A
 mysiteF22/urls.py,b\0\b0f36797735da0cd5f21af492e21397f27ac19a2
 P
  myapp/migrations/0001_initial.py,6\8\68d8c43fd9420abe28e74c408832d5e8f775c221
-?
-myapp/models.py,0\8\08dc5cc32039bfb185ba4992c613c91869254e2f
 >
 myapp/admin.py,b\b\bb6750e5e136ddc291375b9563b0cfcbfad6c130
+R
+"myapp/templates/myapp/detail0.html,5\2\520eb171cd17289bc4eae2cdd875a0247d25213c
+Q
+!myapp/templates/myapp/about0.html,8\1\813dd444f5a5cccf9d5eb2b067d7ab87ad507e81
+P
+ myapp/templates/myapp/about.html,0\9\0909806bbaef68c703949508a38527c5a3742903
+Q
+!myapp/templates/myapp/index0.html,f\f\ffc1315a08a955a215facc30ad28d058cd814f68
+Q
+!myapp/templates/myapp/detail.html,8\4\84521b70a6b4934746d4b22d168104c5a6e50319
+P
+ myapp/templates/myapp/index.html,3\e\3e1212389e609cb72a9d288cbc4bf27c96081d2a

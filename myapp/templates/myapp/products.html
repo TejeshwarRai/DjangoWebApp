@@ -1,0 +1,16 @@
+{% extends 'myapp/base.html' %}
+{% block myhdg %}Hello Tejeshwar{% endblock %}
+{% block body_block %}
+    <h2>List of Products</h2>
+    <ol>
+    {% for prod in prodlist %}
+{#        <li> {{ prod.name }} </a> </li>#}
+        <li> <a href="{{ prod.id }}">{{ prod.name}}</a> </li>
+    {% endfor %}
+    </ol>
+{#    <p><a href="/myapp/about">About page</a></p>#}
+{#    <a href="{% url ‘myapp:about ’%}">About Page</a>#}
+{#    <a href = "{% url 'myapp:index' %}">Click here to return to main page</a>#}
+{#    Update products.html to add a link to place_order page using url namespacing tag#}
+    <a href = "{% url 'myapp:place_order' %}">Click here to place order</a>
+{% endblock %}
