@@ -11,6 +11,10 @@
     {% else %}
     <strong>There are no available categories!</strong>
     {% endif %}
+
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
 {#    <p><a href="/myapp/about">About page</a></p>#}
 {#    <a href="{% url ‘myapp:about ’%}">About Page</a>#}
 {#    <a href = "{% url 'myapp:index' %}">Click here to return to main page</a>#}
