@@ -1,4 +1,7 @@
 # Import necessary classes
+import random
+import string
+
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Group
@@ -143,7 +146,10 @@ def user_login(request):
                 request.session['user_last_name'] = user.last_name
                 request.session.set_expiry(3600)
 
-                return HttpResponseRedirect(reverse('myapp:index'))
+                # return HttpResponseRedirect(reverse('myapp:index'))
+                return HttpResponseRedirect(reverse('myapp:myorders'))
+
+                # return redirect(request.GET.get('next', 'myapp:index'))
             else:
                 return HttpResponse('Your account is disabled.')
         else:
@@ -175,3 +181,17 @@ def register(request):
     else:
         form = RegisterForm()
         return render(request, 'myapp/register.html', {'form': form})
+
+
+
+@login_required(login_url='myapp:login')
+def myorders(request):
+    client_list = Client.objects.all().order_by('id')
+    client_list = [i.username for i in client_list]
+
+    if f'{request.user}' in client_list:
+        order_list = Order.objects.filter(client__username=request.user)
+        return render(request, 'myapp/myorders.html', {"order_list": order_list})
+    else:
+        return HttpResponse('You are not a registered client!')
+

@@ -41,7 +41,11 @@ class Client(User):
     city = models.CharField(max_length=20, default='Windsor')
     province=models.CharField(max_length=2, choices=PROVINCE_CHOICES, default='ON')
     interested_in = models.ManyToManyField(Category)
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
 
+    def interested_in_list(self):
+        return ", ".join([str(p) for p in self.interested_in.all()])
+        # return self.interested_in.all()
     def __str__(self):
         return self.username
 
