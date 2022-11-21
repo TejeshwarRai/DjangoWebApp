@@ -5,12 +5,14 @@ import string
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Group
+from django.core.mail import send_mail
 from django.db.models import F
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils import timezone
 
+from mysiteF22.settings import EMAIL_HOST_USER
 from .forms import *
 from .models import Category, Product, Client, Order
 from django.shortcuts import get_object_or_404
@@ -91,6 +93,7 @@ def place_order(request):
             if order.num_units <= order.product.stock:
                 order.product.stock -= order.num_units
                 order.product.save()
+                order.save()
                 msg = 'Your order has been placed successfully.'
             else:
                 msg = 'We do not have sufficient stock to fill your order.'
@@ -147,8 +150,11 @@ def user_login(request):
                 request.session.set_expiry(3600)
 
                 # return HttpResponseRedirect(reverse('myapp:index'))
-                return HttpResponseRedirect(reverse('myapp:myorders'))
-
+                # return HttpResponseRedirect(reverse('myapp:myorders'))
+                if 'next' in request.POST:
+                    return redirect(request.POST.get('next'))
+                else:
+                    return HttpResponseRedirect(reverse('myapp:index'))
                 # return redirect(request.GET.get('next', 'myapp:index'))
             else:
                 return HttpResponse('Your account is disabled.')
@@ -195,3 +201,21 @@ def myorders(request):
     else:
         return HttpResponse('You are not a registered client!')
 
+def forgot_password(request):
+    if request.method == 'POST':
+        form = ForgotPasswordForm(request.POST)
+        if form.is_valid():
+            random_password = ''.join(random.choice(string.ascii_letters) for i in range(10))
+            password = make_password(random_password)
+            Client.objects.filter(email=form.cleaned_data['Email']).update(password=password)
+
+            subject = 'New Password'
+            message = 'Your new password is ' + random_password
+            recipient = form.cleaned_data['Email']
+            send_mail(subject,message,EMAIL_HOST_USER,[recipient],fail_silently=False)
+            return HttpResponse('A password has been sent to your inbox')
+        else:
+            return HttpResponse('Incorrect details')
+    else:
+        form = ForgotPasswordForm()
+        return render(request,'myapp/forgot_password.html',{'form': form})

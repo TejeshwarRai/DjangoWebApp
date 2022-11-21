@@ -21,3 +21,10 @@ class RegisterForm(forms.ModelForm):
         fields = ['username', 'password', 'email', 'first_name', 'last_name', 'interested_in']
         widgets = {'interested_in': forms.CheckboxSelectMultiple, 'password': forms.PasswordInput}
         labels = {'interested_in': 'Select the topics that you are interested in'}
+
+
+class ForgotPasswordForm(forms.Form):
+    Email = forms.EmailField()
+
+    def __str__(self):
+        return self.Email

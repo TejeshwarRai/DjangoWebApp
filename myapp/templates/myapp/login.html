@@ -7,7 +7,14 @@
             <ul>
                  <li><label>User name:</label><input type="text" name="username"/></li>
                  <li><label>Password:</label><input type="password" name="password"/></li>
+                 <li>
+                     {% if request.GET.next %}
+                         <input type="hidden" name="next" value="{{ request.GET.next }}">
+                     {% endif %}
+                 </li>
                  <li><input type="submit" value="login" /></li>
             </ul>
         </form>
+
+                   <a href = "{% url 'myapp:forgot_password' %}">Forgot Password</a>
 {% endblock %}
