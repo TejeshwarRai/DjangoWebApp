@@ -3,11 +3,37 @@ x
 Hmyapp/migrations/0002_category_warehouse_product_description_and_more.py,8\9\89cfb875caa4139b0fd3ddb029bf3b7540938291
 P
  myapp/migrations/0001_initial.py,6\8\68d8c43fd9420abe28e74c408832d5e8f775c221
-R
-"myapp/templates/myapp/detail0.html,5\2\520eb171cd17289bc4eae2cdd875a0247d25213c
-Q
-!myapp/templates/myapp/about0.html,8\1\813dd444f5a5cccf9d5eb2b067d7ab87ad507e81
 Q
 !myapp/templates/myapp/index0.html,f\f\ffc1315a08a955a215facc30ad28d058cd814f68
 L
 myapp/static/myapp/style.css,9\b\9b2079eb9f28178fd685fc6a597ba6102cc6fb77
+A
+mysiteF22/urls.py,b\0\b0f36797735da0cd5f21af492e21397f27ac19a2
+>
+myapp/admin.py,b\b\bb6750e5e136ddc291375b9563b0cfcbfad6c130
+?
+myapp/models.py,0\8\08dc5cc32039bfb185ba4992c613c91869254e2f
+w
+G.idea/sonarlint/issuestore/8/9/89cfb875caa4139b0fd3ddb029bf3b7540938291,4\f\4fc298627a13e39e2982e52ed94f8735c43e0a8d
+w
+G.idea/sonarlint/issuestore/9/b/9b2079eb9f28178fd685fc6a597ba6102cc6fb77,3\5\359f2f67bf7cf522bff774faf3acfaab7767314e
+i
+9myapp/migrations/0004_client_image_alter_product_stock.py,4\3\43eba57c49c157a7cfd169882b25d655cbb33e14
+P
+ myapp/templates/myapp/index.html,3\e\3e1212389e609cb72a9d288cbc4bf27c96081d2a
+w
+G.idea/sonarlint/issuestore/6/8/68d8c43fd9420abe28e74c408832d5e8f775c221,a\e\ae531e5529905015da5e524f7b55d83a8a95c4e0
+=
+myapp/urls.py,3\9\39d2bf0c90e27113654d9093e3270db87c834e66
+>
+myapp/views.py,2\f\2fc9d08da6338861bc22e1c2fd8645c812d46f2a
+>
+myapp/forms.py,0\e\0edf155a608221ee9893c15e659e4c4d842db9fc
+E
+mysiteF22/settings.py,7\b\7b1147188173c8b3b14eb0b0bc6c66806cd810ed
+P
+ myapp/templates/myapp/about.html,0\9\0909806bbaef68c703949508a38527c5a3742903
+Q
+!myapp/templates/myapp/about0.html,8\1\813dd444f5a5cccf9d5eb2b067d7ab87ad507e81
+O
+myapp/templates/myapp/base.html,1\4\14891f96058ffe7d0e823463ea5ef9366f84e314

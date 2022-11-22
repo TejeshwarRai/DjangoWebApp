@@ -4,7 +4,7 @@
     <form action="{% url 'myapp:register' %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" name="submit1" class="btn btn-success" value="Register" style="margin: 10px">Register</button>
+        <button class = "btn btn-success" type="submit" name="submit1" class="btn btn-success" value="Register" style="margin: 10px">Register</button>
 
     </form>
 
